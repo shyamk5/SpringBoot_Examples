@@ -38,5 +38,4 @@ public class BookingRestController {
 	public Ticket getTicket(@PathVariable("pnr") Integer pnrNumber) {
 		return service.getTicket(pnrNumber);
 	}
-	
 }

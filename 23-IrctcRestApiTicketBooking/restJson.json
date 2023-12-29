@@ -1,0 +1,151 @@
+{
+	"openapi": "3.0.1",
+	"info": {
+		"title": "OpenAPI definition",
+		"version": "v0"
+	},
+	"servers": [
+		{
+			"url": "http://localhost:8080",
+			"description": "Generated server url"
+		}
+	],
+	"paths": {
+		"/bookTicket": {
+			"post": {
+				"tags": [
+					"booking-rest-controller"
+				],
+				"operationId": "ticketBooking",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/Passenger"
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Ticket"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/ticket/{pnr}": {
+			"get": {
+				"tags": [
+					"booking-rest-controller"
+				],
+				"operationId": "getTicket",
+				"parameters": [
+					{
+						"name": "pnr",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer",
+							"format": "int32"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Ticket"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"Passenger": {
+				"type": "object",
+				"properties": {
+					"trainName": {
+						"type": "string"
+					},
+					"trainNumber": {
+						"type": "integer",
+						"format": "int32"
+					},
+					"ticketFrom": {
+						"type": "string"
+					},
+					"ticketTo": {
+						"type": "string"
+					},
+					"doj": {
+						"type": "string"
+					},
+					"phoneNo": {
+						"type": "string"
+					},
+					"name": {
+						"type": "string"
+					},
+					"address": {
+						"type": "string"
+					}
+				}
+			},
+			"Ticket": {
+				"type": "object",
+				"properties": {
+					"trainName": {
+						"type": "string"
+					},
+					"trainNumber": {
+						"type": "integer",
+						"format": "int32"
+					},
+					"ticketFrom": {
+						"type": "string"
+					},
+					"ticketTo": {
+						"type": "string"
+					},
+					"doj": {
+						"type": "string"
+					},
+					"phoneNo": {
+						"type": "string"
+					},
+					"name": {
+						"type": "string"
+					},
+					"address": {
+						"type": "string"
+					},
+					"pnrNumber": {
+						"type": "integer",
+						"format": "int32"
+					},
+					"status": {
+						"type": "string"
+					},
+					"ticketCost": {
+						"type": "number",
+						"format": "double"
+					}
+				}
+			}
+		}
+	}
+}
