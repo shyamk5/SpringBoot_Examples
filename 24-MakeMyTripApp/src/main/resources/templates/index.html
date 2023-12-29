@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>MakeMyTrip - Book Ticket</title>
+</head>
+<body>
+	<form th:action="@{/book-ticket}" th:object="${passenger}" method="post">
+		
+		<h2>Train Ticket Booking Form</h2>
+		
+		<table>
+			
+			<p th:text="${msg}" style="color: green;"/>
+			
+			<tr>
+				<td>Train Name: </td>
+				<td><input type="text" th:field="*{trainName}" required/></td>
+			</tr>
+			
+			<tr>
+				<td>Train Number:</td>
+				<td><input type="number" th:field="*{trainNumber}" required/></td>
+			</tr>
+			
+			<tr>
+				<td>Ticket From:</td>
+				<td><input type="text" th:field="*{ticketFrom}" required/></td>
+			</tr>
+			
+			<tr>
+				<td>Ticket To:</td>
+				<td><input type="text" th:field="*{ticketTo}" required/></td>
+			</tr>
+			
+			<tr>
+				<td>Date of Journey:</td>
+				<td><input type="text" th:field="*{doj}" required/></td>
+			</tr>
+			
+			<tr>
+				<td>Phone Number:</td>
+				<td><input type="text" th:field="*{phoneNo}" required/></td>
+			</tr>
+			
+			<tr>
+				<td>Full Name</td>
+				<td><input type="text" th:field="*{name}" required/></td>
+			</tr>
+			
+			<tr>
+				<td>Address</td>
+				<td><input type="text" th:field="*{address}" required/></td>
+			</tr>
+			
+			<tr>
+				<td></td>
+				<td><input type="submit" value="Book Ticket"/></td>
+			</tr>
+			
+			
+		</table>
+		<br>
+		<hr/>
+		<br>
+		<a href="pnr-enquiry">PNR Enquiry</a>
+		
+	</form>
+</body>
+</html>
