@@ -1,40 +1,80 @@
 <!DOCTYPE html>
 <html xmlns:th="www.thymeleaf.org">
+
 <head>
-<meta charset="UTF-8">
-<title>MakeMyTrip - PNR Enquiry</title>
+	<meta charset="UTF-8">
+	<title>MakeMyTrip - PNR Enquiry</title>
 </head>
+
 <body>
 	<form th:action="@{/get-ticket}" th:object="${passenger}" method="get">
-		
+
 		<h2>PNR Enquiry</h2>
-		
+
 		<table>
-			
+
 			<tr>
 				<td>PNR Number: </td>
-				<td><input type="number" name="pnrNum" required/></td>
+				<td><input type="number" name="pnrNum" required /></td>
 			</tr>
-			
+
 			<tr>
 				<td></td>
-				<td><input type="submit" value="Get Ticket"/></td>
+				<td><input type="submit" value="Get Ticket" /></td>
 			</tr>
-			
-			
+
+
 		</table>
-		<br>
-		<hr/>
-		<br>
-		Train Name: <span th:text="${ticket.trainName}"></span><br>
-		Train Number: <span th:text="${ticket.trainNumber}"></span><br>
-		Ticket From: <span th:text="${ticket.ticketFrom}"></span><br>
-		Ticket To: <span th:text="${ticket.ticketTo}"></span><br>
-		Date of Journey: <span th:text="${ticket.doj}"></span><br>
-		Phone No.: <span th:text="${ticket.phoneNo}"></span><br>
-		Full Name: <span th:text="${ticket.name}"></span><br>
-		Address: <span th:text="${ticket.address}"></span><br>
-		
+
 	</form>
+
+	<br>
+	<hr />
+	<br>
+
+	<table>
+
+		<tr>
+			<td>Train Name:</td>
+			<td th:text="${ticket.trainName}"></td>
+		</tr>
+
+		<tr>
+			<td>Train Number:</td>
+			<td th:text="${ticket.trainNumber}"></td>
+		</tr>
+
+		<tr>
+			<td>Ticket From:</td>
+			<td th:text="${ticket.ticketFrom}"></td>
+		</tr>
+
+		<tr>
+			<td>Ticket To: </td>
+			<td th:text="${ticket.ticketTo}"></td>
+		</tr>
+
+		<tr>
+			<td>Date of Journey: </td>
+			<td th:text="${ticket.doj}"></td>
+		</tr>
+
+		<tr>
+			<td>Phone No.: </td>
+			<td th:text="${ticket.phoneNo}"></td>
+		</tr>
+
+		<tr>
+			<td>Full Name: </td>
+			<td th:text="${ticket.name}"></td>
+		</tr>
+
+		<tr>
+			<td>Address: </td>
+			<td th:text="${ticket.address}"></td>
+		</tr>
+
+
+	</table>
 </body>
 </html>
